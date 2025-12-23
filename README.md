@@ -23,7 +23,7 @@ Telegram бот для расшифровки аудиофайлов с помо
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone <your-repo-url>
+   git clone github.com/tema2637/audiototext
    cd whisper-telegram-bot
    ```
 

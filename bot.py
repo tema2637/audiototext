@@ -122,7 +122,7 @@ def main() -> None:
     application.add_handler(MessageHandler(filters.AUDIO & ~filters.COMMAND, transcribe_audio))
 
     # Start the Bot
-    application.run_polling(close_loop=True)
+    application.run_polling()
 
 
 if __name__ == '__main__':

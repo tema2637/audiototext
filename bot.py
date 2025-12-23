@@ -21,9 +21,12 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Load Whisper model
-logger.info(f"Loading Whisper model ({WHISPER_MODEL})...")
-model = whisper.load_model(WHISPER_MODEL)
+# Load Whisper model with GPU support if available
+import torch
+
+device = "cuda" if torch.cuda.is_available() else "cpu"
+logger.info(f"Loading Whisper model ({WHISPER_MODEL}) on {device}...")
+model = whisper.load_model(WHISPER_MODEL, device=device)
 logger.info("Whisper model loaded successfully!")
 
 

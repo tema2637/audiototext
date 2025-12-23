@@ -27,7 +27,7 @@ model = whisper.load_model(WHISPER_MODEL)
 logger.info("Whisper model loaded successfully!")
 
 
-async def transcribe_audio(update: Update, context: ContextTypes.DEFAULT) -> None:
+async def transcribe_audio(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """
     Handle audio messages and transcribe them using Whisper
     """

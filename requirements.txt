@@ -1,0 +1,5 @@
+openai-whisper
+python-telegram-bot
+pydub
+ffmpeg-python
+python-dotenv

@@ -113,7 +113,7 @@ def main() -> None:
     if not TOKEN:
         print("Please set the TELEGRAM_BOT_TOKEN environment variable.")
         return
-    
+
     application = Application.builder().token(TOKEN).build()
 
     # Add handlers
@@ -122,7 +122,7 @@ def main() -> None:
     application.add_handler(MessageHandler(filters.AUDIO & ~filters.COMMAND, transcribe_audio))
 
     # Start the Bot
-    application.run_polling()
+    application.run_polling(close_loop=True)
 
 
 if __name__ == '__main__':

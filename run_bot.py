@@ -52,7 +52,10 @@ def main():
     
     # Install requirements if not already installed
     try:
-        subprocess.run([sys.executable, '-m', 'pip', 'install', '-r', 'requirements.txt'], 
+        import pathlib
+        script_dir = pathlib.Path(__file__).parent.absolute()
+        req_file = script_dir / 'requirements.txt'
+        subprocess.run([sys.executable, '-m', 'pip', 'install', '-r', str(req_file)],
                       check=True, stdout=subprocess.DEVNULL)
         logger.info("Dependencies installed successfully")
     except subprocess.CalledProcessError:

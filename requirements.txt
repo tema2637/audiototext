@@ -1,5 +1,5 @@
 openai-whisper
-python-telegram-bot
+python-telegram-bot==20.8
 pydub
 ffmpeg-python
 python-dotenv
